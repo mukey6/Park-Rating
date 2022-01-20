@@ -2,10 +2,37 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 
 router.get('/', (req, res) => {
-    res.render('homepage');
+    Post.findAll({
+      attributes: [
+        '',
+        '',
+        '',
+        '',
+        [sequelize.literal(]
+      ],
+      include: [
+        {
+          model: Comment,
+          attributes: [],
+          include: {
+            model: User,
+            attributes: []
+          }
+        },
+        {
+          model: User,
+          attributes: []
+        }
+      ]
+    })
+      .then(dbPostData => {
+        res.render('homepage', dbPostData[0]);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
   });
-  
-  module.exports = router;
   
 
 router.get('/login', (req, res) =>{
