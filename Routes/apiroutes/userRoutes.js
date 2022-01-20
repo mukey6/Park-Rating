@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-router.post('/signin', (req, res) => {
+router.post('/login', (req, res) => {
     User.findOne({
       where: {
         email: req.body.email
@@ -26,7 +26,7 @@ router.post('/signin', (req, res) => {
     });
   });
   
-router.post('/signout', (req, res) => {
+router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
       req.session.destroy(() => {
         res.status(204).end();
