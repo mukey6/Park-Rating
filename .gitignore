@@ -1,4 +1,4 @@
-Node_Module
+node_modules
 .DS_Stor
 .env
 package-lock.json
