@@ -3,7 +3,7 @@ async function signupFormHandler(event) {
   
 
     // git id's for the following from handlebars
-    const username = document.querySelector('#????').value.trim();
+    const username = document.querySelector('#???').value.trim();
     const email = document.querySelector('#???').value.trim();
     const password = document.querySelector('#????').value.trim();
   

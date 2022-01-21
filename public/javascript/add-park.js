@@ -6,7 +6,7 @@ async function newFormHandler(event) {
     const parkRate = document.querySelector('????').value;
          
     // get end point and add it to fetch
-    const response = await fetch(`/????`, {
+    const response = await fetch(`/???`, {
       method: 'POST',
       body: JSON.stringify({
         parkName,

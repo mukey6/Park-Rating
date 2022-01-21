@@ -1,7 +1,7 @@
 async function loginFormHandler(event) {
     event.preventDefault();
   // get handlebar id an add it here 
-    const email = document.querySelector('#?????').value.trim();
+    const email = document.querySelector('#????').value.trim();
     const password = document.querySelector('#p???').value.trim();
   
     if (email && password) {

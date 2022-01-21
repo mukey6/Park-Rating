@@ -1,6 +1,6 @@
 async function logout() {
     /// get logout end point
-    const response = await fetch('/????', {
+    const response = await fetch('/???', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' }
     });

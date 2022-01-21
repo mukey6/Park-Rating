@@ -11,7 +11,7 @@ async function commentFormHandler(event) {
   
     if (comment_text) {
         // get end-point for comments
-        const response = await fetch('/????', {
+        const response = await fetch('/???', {
           method: 'POST',
           body: JSON.stringify({
             park_id,
