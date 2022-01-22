@@ -1,4 +1,5 @@
 const router = require('express').Router();
+// add correct file path const Authorize = require('../');
 
 //create user/profile
 router.post('/', (req, res) => {
