@@ -1,5 +1,19 @@
 const router = require('express').Router();
 
+//create user/profile
+router.post('/', (req, res) => {
+    User.create({
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password
+    })
+      .then(dbUserData => res.json(dbUserData))
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+
 router.post('/login', (req, res) => {
     User.findOne({
       where: {
@@ -36,3 +50,4 @@ router.post('/logout', (req, res) => {
       res.status(404).end();
     }
   });
+
