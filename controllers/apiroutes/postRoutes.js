@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User, Comment, Post } = require('../models');
-// add correct file path const Authorize = require('../');
+const Authorize = require('../../utils/authorize');
 
 router.get('/', (req, res) => {
     Post.findAll({
