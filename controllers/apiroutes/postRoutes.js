@@ -76,32 +76,6 @@ router.get('/', (req, res) => {
       });
   });
 
-  //update existing post
-  router.put('/:id', Authorize, (req, res) => {
-    Post.update(
-      {
-        title: req.body.title
-      },
-      {
-        where: {
-          id: req.params.id
-        }
-      }
-    )
-      .then(dbPostData => {
-        if (!dbPostData) {
-          res.status(404).json({ message: 'No such post exists' });
-          return;
-        }
-        res.json(dbPostData);
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
-
-
   //create new post
   router.post('/', withAuth, (req, res) => {
     Post.create({
