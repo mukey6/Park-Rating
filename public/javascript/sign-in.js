@@ -2,7 +2,7 @@ async function loginFormHandler(event) {
 
     event.preventDefault();
   // get handlebar id an add it here 
-    const ranger = document.querySelector('#signin-ranger').value.trim();
+    const email = document.querySelector('#signin-email').value.trim();
     const password = document.querySelector('#signin-password').value.trim();
   
     if (email && password) {
@@ -11,7 +11,7 @@ async function loginFormHandler(event) {
       const response = await fetch('/api/users/login', {
         method: 'post',
         body: JSON.stringify({
-          ranger,
+          email,
           password
         }),
         headers: { 'Content-Type': 'application/json' }

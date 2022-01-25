@@ -6,7 +6,7 @@ async function deleteFormHandler(event) {
         window.location.toString().split('/').length - 1
       ];
           // get end point and add it to fetch
-    const deletedPost = await fetch(`/????/${id}`, {
+    const deletedPost = await fetch(`/api/posts/${id}`, {
         method: 'DELETE'
       });
   if(deletedPost.ok){

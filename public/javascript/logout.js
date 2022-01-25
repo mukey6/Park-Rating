@@ -13,6 +13,6 @@ async function logout() {
       alert(response.statusText);
     }
   }
-  // get logout class from handlebar
+  // get logout class from handlebar button
   document.querySelector('#logout???').addEventListener('click', logout);
 
