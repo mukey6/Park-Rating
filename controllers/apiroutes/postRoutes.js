@@ -10,19 +10,20 @@ router.get('/', (req, res) => {
         'park_name',
         'park_rate',
         'user_id',
-        ],
+        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      ],
       include: [
         {
           model: Comment,
-          attributes: ['id', 'comment_input', 'user_id','title'],
+          attributes: ['id', 'comment_text', 'user_id','post_id'],
           include: {
             model: User,
-            attributes: ['userID']
+            attributes: ['username']
           }
         },
         {
           model: User,
-          attributes: ['userID']
+          attributes: ['username']
         }
       ]
     })
@@ -40,47 +41,28 @@ router.get('/', (req, res) => {
         where: {
             id: req.params.id
           },
-        attributes: [
-          'id',
-          'park_name',
-          'park_rate',
-          'user_id',
+          attributes: [
+            'id',
+            'park_name',
+            'park_rate',
+            'user_id',
+            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
           ],
-        include: [
-          {
-            model: Comment,
-            attributes: ['id', 'comment_input', 'user_id','title'],
-            include: {
+          include: [
+            {
+              model: Comment,
+              attributes: ['id', 'comment_text', 'user_id','post_id'],
+              include: {
+                model: User,
+                attributes: ['username']
+              }
+            },
+            {
               model: User,
-              attributes: ['userID']
+              attributes: ['username']
             }
-          },
-          {
-            model: User,
-            attributes: ['userID']
-          }
-        ]
-      })
-      .then(dbPostData => {
-        if (!dbPostData) {
-          res.status(404).json({ message: 'No such post exists' });
-          return;
-        }
-        res.json(dbPostData);
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
-
-  //delete existing post
-  router.delete('/:id', Authorize, (req, res) => {
-    Post.destroy({
-      where: {
-        id: req.params.id
-      }
-    })
+          ]
+        })
       .then(dbPostData => {
         if (!dbPostData) {
           res.status(404).json({ message: 'No such post exists' });
@@ -118,5 +100,51 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
       });
   });
+
+
+  //create new post
+  router.post('/', withAuth, (req, res) => {
+    Post.create({
+      title: req.body.title,
+      post_url: req.body.post_url,
+      user_id: req.session.user_id
+    })
+      .then(dbPostData => res.json(dbPostData))
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+  
+
+  //upvote posts
+  router.put('/upvote', withAuth, (req, res) => {
+    Post.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, User, Comment })
+      .then(updatedVoteData => res.json(updatedVoteData))
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+
+    //delete existing post
+    router.delete('/:id', Authorize, (req, res) => {
+      Post.destroy({
+        where: {
+          id: req.params.id
+        }
+      })
+        .then(dbPostData => {
+          if (!dbPostData) {
+            res.status(404).json({ message: 'No such post exists' });
+            return;
+          }
+          res.json(dbPostData);
+        })
+        .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+        });
+    });
   
   module.exports = router;

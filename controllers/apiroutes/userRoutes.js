@@ -2,7 +2,7 @@ const router = require('express').Router();
 const Authorize = require('../../utils/authorize');
 
 
- // route to get all lsi of all existing users 
+ // route to get all list of all existing users 
 
  router.get('/', (req, res) => {
   User.findAll({
