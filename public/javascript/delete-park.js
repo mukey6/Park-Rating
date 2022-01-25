@@ -18,7 +18,7 @@ async function deleteFormHandler(event) {
   }
   // find a class for the delete button
   document.querySelector('.delete-park-btn???').addEventListener('click', deleteFormHandler);
-=======
+
   event.preventDefault();
 
   const id = window.location.toString().split("/")[

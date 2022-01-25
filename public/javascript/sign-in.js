@@ -33,7 +33,7 @@ async function loginFormHandler(event) {
   // get handlebar form/button an add it here 
 
 document.querySelector('????').addEventListener('submit', loginFormHandler);
-=======
+
   event.preventDefault();
   // get handlebar id an add it here
   const ranger = document.querySelector("#????").value.trim();
