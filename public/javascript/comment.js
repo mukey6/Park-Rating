@@ -62,7 +62,7 @@ async function commentFormHandler(event) {
       alert(response.statusText);
     }
   }
-}
+
 
 // get class for form associated with comments
 document

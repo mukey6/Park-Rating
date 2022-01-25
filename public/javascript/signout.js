@@ -28,7 +28,7 @@ async function logout() {
   } else {
     alert(response.statusText);
   }
-}
+
 // get logout class from handlebar
 document.querySelector("#logout???").addEventListener("click", logout);
 
