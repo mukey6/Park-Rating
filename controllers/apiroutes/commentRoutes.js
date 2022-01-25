@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Comment } = require('../../models');
 const Authorize = require('../../utils/authorize');
+const sequelize = require('../../config/connection')
 
 router.get('/', (req, res) => {
     Comment.findAll()
