@@ -9,19 +9,20 @@ router.get('/', (req, res) => {
         'park_name',
         'park_rate',
         'user_id',
-        ],
+        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      ],
       include: [
         {
           model: Comment,
-          attributes: ['id', 'comment_input', 'user_id','title'],
+          attributes: ['id', 'comment_text', 'user_id','post_id'],
           include: {
             model: User,
-            attributes: ['userID']
+            attributes: ['username']
           }
         },
         {
           model: User,
-          attributes: ['userID']
+          attributes: ['username']
         }
       ]
     })
@@ -54,19 +55,20 @@ router.get('/post/:id', (req, res) => {
         'park_name',
         'park_rate',
         'user_id',
-        ],
+        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      ],
       include: [
         {
           model: Comment,
-          attributes: ['id', 'comment_input', 'user_id','title'],
+          attributes: ['id', 'comment_text', 'user_id','post_id'],
           include: {
             model: User,
-            attributes: ['userID']
+            attributes: ['username']
           }
         },
         {
           model: User,
-          attributes: ['userID']
+          attributes: ['username']
         }
       ]
     })

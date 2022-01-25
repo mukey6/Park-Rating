@@ -1,5 +1,20 @@
 const router = require('express').Router();
-// add correct file path const Authorize = require('../');
+const Authorize = require('../../utils/authorize');
+
+
+ // route to get all list of all existing users 
+
+ router.get('/', (req, res) => {
+  User.findAll({
+    attributes: { exclude: ['password'] }
+  })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 
 //create user/profile
 router.post('/', (req, res) => {
@@ -8,7 +23,15 @@ router.post('/', (req, res) => {
       email: req.body.email,
       password: req.body.password
     })
-      .then(dbUserData => res.json(dbUserData))
+    .then(dbUserData => {
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.loggedIn = true;
+  
+        res.json(dbUserData);
+      });
+    })
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -51,6 +74,26 @@ router.post('/logout', (req, res) => {
       res.status(404).end();
     }
   });
+
+  
+router.delete('/:id', (req, res) => {
+  User.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(dbUserData => {
+      if (!dbUserData) {
+        res.status(404).json({ message: 'No user found with this id' });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 
   module.exports = router;
