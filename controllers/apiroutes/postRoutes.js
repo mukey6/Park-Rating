@@ -77,10 +77,10 @@ router.get('/', (req, res) => {
   });
 
   //create new post
-  router.post('/', withAuth, (req, res) => {
+  router.post('/', Authorize, (req, res) => {
     Post.create({
-      title: req.body.title,
-      post_url: req.body.post_url,
+      park_name: req.body.title,
+      post_rate: req.body.post_url,
       user_id: req.session.user_id
     })
       .then(dbPostData => res.json(dbPostData))
@@ -92,7 +92,7 @@ router.get('/', (req, res) => {
   
 
   //upvote posts
-  router.put('/upvote', withAuth, (req, res) => {
+  router.put('/upvote', Authorize, (req, res) => {
     Post.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, User, Comment })
       .then(updatedVoteData => res.json(updatedVoteData))
       .catch(err => {
