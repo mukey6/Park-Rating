@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Comment } = require('../../models');
-// add correct file path const Authorize = require('../');
+const Authorize = require('../../utils/authorize');
 
 router.get('/', (req, res) => {
     Comment.findAll()
