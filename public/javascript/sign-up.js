@@ -27,7 +27,6 @@ async function signupFormHandler(event) {
   }
 // get form class for signup
   document.querySelector('.signup-form???').addEventListener('submit', signupFormHandler);
-=======
   event.preventDefault();
 
   // git id's for the following from handlebars
@@ -49,7 +48,7 @@ async function signupFormHandler(event) {
       alert(response.statusText);
     }
   }
-}
+
 // get form class for signup
 document
   .querySelector(".signup-form???")

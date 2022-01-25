@@ -52,7 +52,7 @@ async function newFormHandler(event) {
   } else {
     alert(response.statusText);
   }
-}
+
 // get handlebar input an add it here
 document.querySelector(".new-park-form??").addEventListener("submit", newFormHandler);
 
