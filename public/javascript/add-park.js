@@ -24,4 +24,5 @@ async function newFormHandler(event) {
   } else {
     alert(response.statusText);
   }
+}
 

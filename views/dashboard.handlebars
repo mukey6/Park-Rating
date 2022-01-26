@@ -1,0 +1,37 @@
+<section>
+  <h2>Create New review</h2>
+
+  <form class="new-post-form">
+    <div>
+      <label for="post-title">Review</label>
+      <input type="text" id="post-title" name="post-title" />
+    </div>
+   <div>
+       <ol>
+           <li>
+               <button>1</button>
+               <button>2</button>
+               <button>3</button>
+               <button>4</button>
+               <button>5</button>
+           </li>
+       </ol>
+   </div>
+    <button type="submit" class="btn">Create</button>
+  </form>
+</section>
+
+{{#if posts.length}}
+<section>
+  <h2>Your review</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+{{!--  dispaly each review--}}
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/add-post.js"></script>
