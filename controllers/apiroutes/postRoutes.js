@@ -81,7 +81,7 @@ router.get('/', (req, res) => {
   router.post('/', Authorize, (req, res) => {
     Post.create({
       park_name: req.body.park_name,
-      post_rate: req.body.park_rate,
+      park_rate: req.body.park_rate,
       user_id: req.session.user_id
     })
       .then(dbPostData => res.json(dbPostData))

@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const Authorize = require('../../utils/authorize');
-const {User, Post, Vote, Comment} = require('../../models')
+
+const { User } = require('../../models')
+
 
  // route to get all list of all existing users 
 
