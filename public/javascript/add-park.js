@@ -25,6 +25,5 @@ async function newFormHandler(event) {
       alert(response.statusText);
     }
   }
-}
 
 
