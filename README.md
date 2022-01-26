@@ -1,26 +1,23 @@
 # Park Ranger
   
 ## Description
-A full stack application that allows the user to review parks in their area
+A full stack application that allows the user to review parks in their area and search reviews from other users.
 
 ## Table of Contents
 - [Installation](#installation)
-- [Usage](#usage)
+- [URL](#usage)
 - [License](#license)
 - [Contribution](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
 
-## Installation
-xxx
-## Usage
-xxx
 
+## URL
+Visit our applicaiton, deployed to Heroku [Here]()
 
-## Contributing
+## Contributions
+No Outside Contributions are being accepted at this time as this application is not open source.
 
-## Tests
-n
 ## Questions
 If you have any questions on this project, feel free to reach us through our GitHub profiles or emails:
 - [Muktar Ahmed](https://github.com/mukey6), email.
