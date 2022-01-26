@@ -9,7 +9,8 @@ router.get('/', (req, res) => {
         'id',
         'park_name',
         'park_rate',
-        // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+        'user_id',
+        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
       ],
       include: [
         {
@@ -25,12 +26,10 @@ router.get('/', (req, res) => {
           attributes: ['username']
         }
       ]
-    }).then((postData)=>{
-      res.json(postData)
     })
-      // .then(dbPostData => {
-      //   res.render('homepage', dbPostData[0]);
-      // })
+      .then(dbPostData => {
+        res.render('homepage', dbPostData[0]);
+      })
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
