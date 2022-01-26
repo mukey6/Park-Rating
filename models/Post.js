@@ -43,10 +43,10 @@ Post.init(
         park_rate: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            validate: {
+             validate: {
                 min: 1,
                 max: 5
-            }
+             }
         },
 
         user_id: {
