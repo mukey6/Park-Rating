@@ -1,10 +1,10 @@
 <section>
   <h2>Create New review</h2>
 
-  <form class="new-post-form">
+  <form class="new-park-form">
     <div>
-      <label for="post-title">Review</label>
-      <input type="text" id="post-title" name="post-title" />
+      <label for="post-title">Park Name</label>
+      <input type="text" id="park-name" name="park-name" />
     </div>
    <div>
        <label type="number" for="rate">Rate out of 5</label>
@@ -21,10 +21,11 @@
     {{#each posts as |post|}}
     <li>
 {{!--  dispaly each review--}}
+{{> postinfo post}}
     </li>
     {{/each}}
   </ol>
 </section>
 {{/if}}
 
-<script src="/public/javascript/add-park.js"></script>
+<script src="/javascript/add-park.js"></script>

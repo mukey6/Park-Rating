@@ -1,5 +1,5 @@
 async function logout() {
-
+console.log("clicked logout")
   /// get logout end point
   const response = await fetch('/api/users/logout', {
     method: 'post',
