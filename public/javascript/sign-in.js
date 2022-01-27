@@ -2,8 +2,8 @@ async function loginFormHandler(event) {
 
   event.preventDefault();
 // get handlebar id an add it here 
-  const email = document.querySelector('#signin-email').value.trim();
-  const password = document.querySelector('#signin-password').value.trim();
+  const email = document.querySelector('#email-login').value.trim();
+  const password = document.querySelector('#password-login').value.trim();
 
   if (email && password) {
 
@@ -32,5 +32,5 @@ async function loginFormHandler(event) {
 
 // get handlebar form/button an add it here 
 
-document.querySelector('????').addEventListener('submit', loginFormHandler);
+document.querySelector('.login-form').addEventListener('click', loginFormHandler);
 

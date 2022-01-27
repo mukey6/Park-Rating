@@ -14,4 +14,4 @@ async function logout() {
   }
 }
 // get logout class from handlebar button
-document.querySelector('#logout???').addEventListener('click', logout);
+document.querySelector('#logout').addEventListener('click', logout);
