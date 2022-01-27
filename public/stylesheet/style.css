@@ -1,4 +1,10 @@
-/* header */
+.nav-header{
+color:black;
+}
+
+.nav-link {
+  color: black;
+}
 /* <span class="d-block p-2 bg-primary text-white">d-block</span>
  */
 
@@ -9,3 +15,7 @@
   <a class="nav-link active" aria-current="page" href="#">Active</a>
   <ul/>
 </nav> *
+
+
+
+sdfa
