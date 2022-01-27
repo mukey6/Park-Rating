@@ -1,5 +1,5 @@
 async function logout() {
-
+console.log("clicked logout")
   /// get logout end point
   const response = await fetch('/api/users/logout', {
     method: 'post',
@@ -14,4 +14,4 @@ async function logout() {
   }
 }
 // get logout class from handlebar button
-document.querySelector('#logout???').addEventListener('click', logout);
+document.querySelector('#logout').addEventListener('click', logout);

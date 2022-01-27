@@ -3,8 +3,8 @@ async function newFormHandler(event) {
     event.preventDefault();
   
       // get handlebar input an add it here 
-    const park_name = document.querySelector('????"]').value;
-    const park_rate = document.querySelector('????').value;
+    const park_name = document.querySelector('#park-name').value;
+    const park_rate = document.querySelector('#rate').value;
          
     // get end point and add it to fetch
     const response = await fetch(`/api/posts`, {
@@ -20,8 +20,10 @@ async function newFormHandler(event) {
   
     if (response.ok) {
         // redirect to user's page to show their added parks
-      document.location.replace('/');
+      document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
     }
   }
+
+  document.querySelector('.new-park-form').addEventListener('submit', newFormHandler);
