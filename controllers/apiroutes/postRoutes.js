@@ -84,7 +84,7 @@ router.get('/', (req, res) => {
       .then(dbPostData => res.json(dbPostData))
       .catch(err => {
         console.log(err);
-        res.status(500).json(err);
+        res.status(500, 'rror: Rate is out of range').json(err);
       });
   });
   
