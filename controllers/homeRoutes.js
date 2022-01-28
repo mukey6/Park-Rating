@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
       ]
     })
       .then(dbPostData => {
-        res.render('homepage', dbPostData[0]);
+        res.render('homepage', dbPostData);
       })
       .catch(err => {
         console.log(err);
@@ -79,7 +79,7 @@ router.get('/post/:id', (req, res) => {
         }
         const post = dbPostData.get({ plain: true });
   
-        res.render('single-post', {
+        res.render('singlepost', {
           post,
           loggedIn: req.session.loggedIn
         });

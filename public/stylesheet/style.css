@@ -5,17 +5,7 @@ color:black;
 .nav-link {
   color: black;
 }
-/* <span class="d-block p-2 bg-primary text-white">d-block</span>
- */
 
-
- /* nav bar
- <ul class="nav justify-content-center">
- <nav class="nav">
-  <a class="nav-link active" aria-current="page" href="#">Active</a>
-  <ul/>
-</nav> *
-
-
-
-sdfa
+h2, h3{
+  font-size: 15px;
+}
