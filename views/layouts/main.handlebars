@@ -16,10 +16,12 @@
         <a href="/" class="nav-header"> Park Ranger</a>
       </h1>
       <nav>
-
+          {{#if loggedIn}}
       <a href="/dashboard" class="nav-link active" >dashboard</a>
       <button id="logout" class="nav-header">logout</button>
+      {{else}}
       <a href="/login" class="nav-link active">login</a>
+      {{/if}}
       </nav>
     </header>
     <main>
