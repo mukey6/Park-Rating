@@ -32,9 +32,5 @@ console.log("clicked")
 
 // get handlebar form/button an add it here 
 
-<<<<<<< HEAD
-document.querySelector('.login-form').addEventListener('click', loginFormHandler);
-=======
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
->>>>>>> 5def1340f68e1ff8a385a9ae4deddc7481e0ba58
 
