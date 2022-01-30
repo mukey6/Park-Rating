@@ -1,4 +1,4 @@
-<ol class="post-list">
+{{!-- <ol class="post-list">
   <li>
     <article class="post">
       <div class="title">
@@ -13,4 +13,23 @@
       </div>
     </article>
   </li>
+</ol> --}}
+
+<ol class="post-list">
+<div class="card border-success mb-3" style="max-width: 89rem;">
+  <div class="card-body">
+    <h4 class="card-title">
+      <a href="{{post_url}}" target="_blank">{{title}}</a>
+        <span>({{post_url}})</span>
+        </h4>
+    <p class="card-text">
+      <div class="meta">
+        {{vote_count}} point(s) by {{user.username}} on
+        {{created_at}}
+        |
+      </div>
+    </p>
+    <a href="/post/{{id}}" class="card-link">{{comments.length}} comment(s)</a>
+  </div>
+</div>
 </ol>
