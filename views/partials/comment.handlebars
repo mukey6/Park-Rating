@@ -1,14 +1,27 @@
-<div=>
+{{!-- <div>
  {{#each this}}
-  <section>
-    <div>
+  <section class="comment">
+    <div class="meta">
     {{user.username}} at {{created_at}}
     </div>
     <div>
     {{post_id}}
     </div>
-    <div>
-    {{comment_text}}
+    <div class="text">
+{{post.comment_text}}
+    </div>
+  </section>
+  {{/each}}
+</div> --}}
+
+<div class="comments">
+  {{#each this}}
+  <section class="comment">
+
+
+    <div class="text">
+      {{user.username}} commented
+      {{comment_text}}
     </div>
   </section>
   {{/each}}

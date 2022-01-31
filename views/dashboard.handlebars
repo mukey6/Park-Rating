@@ -4,11 +4,11 @@
   <form class="new-park-form">
     <div>
       <label for="post-title">Park Name</label>
-      <input type="text" id="park-name" name="park-name" />
+      <input type="text" id="park-name" name="park-name" placeholder="Enter park name"/>
     </div>
    <div>
        <label for=""> Review</label>
-       <input type="text" name="" id="rate">
+       <input type="text" name="" id="rate" placeholder="rate 1-5">
    </div>
     <button type="submit" class="btn">Create</button>
   </form>
@@ -16,7 +16,7 @@
 
 {{#if posts.length}}
 <section>
-  <h2>Your review</h2>
+  <h2 >Your review</h2>
   <ol>
     {{#each posts as |post|}}
     <li>

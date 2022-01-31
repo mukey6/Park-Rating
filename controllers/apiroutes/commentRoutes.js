@@ -4,7 +4,10 @@ const Authorize = require('../../utils/authorize');
 const sequelize = require('../../config/connection')
 
 router.get('/', (req, res) => {
-    Comment.findAll()
+    Comment.findAll({
+      attributes: ["id", "comment_text", "created_at"],
+
+    })
       .then(dbCommentData => res.json(dbCommentData))
       .catch(err => {
         console.log(err);

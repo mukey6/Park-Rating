@@ -4,9 +4,9 @@ async function commentFormHandler(event) {
 
 
   // get textarea for comment (textarea[name="comment-body)
-  const comment_text = document.querySelector('').value.trim();
-
-  const park_id = window.location.toString().split('/')[
+  const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
+  
+  const post_id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];
 
@@ -15,7 +15,7 @@ async function commentFormHandler(event) {
       const response = await fetch('/api/comments', {
         method: 'POST',
         body: JSON.stringify({
-          park_id,
+          post_id,
           comment_text
         }),
         headers: {
@@ -24,6 +24,7 @@ async function commentFormHandler(event) {
       });
     
       if (response.ok) {
+        console.log('success')
         document.location.reload();
       } else {
         alert(response.statusText);
@@ -32,5 +33,5 @@ async function commentFormHandler(event) {
 
 
     // get class for form associated with comments 
-document.querySelector('.comment-form???').addEventListener('submit', commentFormHandler);
+document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
 
