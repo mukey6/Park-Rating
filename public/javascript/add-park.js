@@ -3,8 +3,8 @@ async function newFormHandler(event) {
   event.preventDefault();
 
     // get handlebar input an add it here 
-  const park_name = document.querySelector('????"]').value;
-  const park_rate = document.querySelector('????').value;
+  const park_name = document.querySelector('park-name').value;
+  const park_rate = document.querySelector('park-rate').value;
        
   // get end point and add it to fetch
   const response = await fetch(`/api/posts`, {

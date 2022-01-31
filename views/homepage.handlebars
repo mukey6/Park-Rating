@@ -1,12 +1,18 @@
-{{!--
-<ol>
-  {{#each posts as |post|}}
-  <li>
-    {{> postinfo post}}
-  </li>
-  {{/each}}
-  </ol>
---}}
+<ol class="post-list">
+<div class="card border-success mb-3" style="max-width: 89rem;">
+  <div class="card-body">
+    <h4 class="card-title">
+{{#each posts as |post|}}
+        </h4>
+    <p class="card-text">
+      <div class="meta">
+        {{> postinfo post}}
+      </div>
+   {{/each}}
+  </div>
+</div>
+</ol>
+
 
 <ol class="post-list">
 <div class="card border-success mb-3" style="max-width: 89rem;">

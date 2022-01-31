@@ -26,8 +26,14 @@
           <a class="nav-link" href="/login">Login and Sign up</a>
         </li>
         <li class="nav-item">
-        
+        {{#if loggedIn}}
           <a class="nav-link" href="/dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="logout">Logout</a>
+        {{else}}
+       
+        {{/if}}
         </li>
       </ul>
     </div>
@@ -36,20 +42,6 @@
 
 <body style="background-color: rgb(233, 232, 232);">
   <div class="wrapper">
-
-      <h1>
-        
-      </h1>
-        <nav>
-        {{#if loggedIn}}
-        <a href="/dashboard">dashboard</a>
-        
-        <button id="logout">logout</button>
-        {{else}}
-       
-        {{/if}}
-        </nav>
-    </header>
     <main>
       {{{ body }}}
     </main>

@@ -1,31 +1,40 @@
 <section>
   <h2>Create New review</h2>
 
-  <form class="new-park-form">
-    <div>
-      <label for="post-title">Park Name</label>
-      <input type="text" id="park-name" name="park-name" />
-    </div>
-   <div>
-       <label for=""> Review</label>
-       <input type="text" name="" id="rate">
-   </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
+  <div class="mb-3 border-success">
+  <label for="post-title" class="form-label">Park Name</label>
+  <input type="text" class="form-control" id="park-name" style="background-color: forestgreen;">
+</div>
+<div class="mb-3">
+  <label for="" class="form-label">Review</label>
+  <input type="text" class="form-control" id="park-rate" style="background-color: forestgreen;">
+
+  <button type="submit" class="btn btn-success">Create</button>
+</div>
 </section>
 
+
+
+
+
 {{#if posts.length}}
-<section>
-  <h2>Your review</h2>
-  <ol>
-    {{#each posts as |post|}}
-    <li>
-{{!--  dispaly each review--}}
-{{> postinfo post}}
-    </li>
-    {{/each}}
-  </ol>
-</section>
+<ol class="post-list">
+<div class="card border-success mb-3" style="max-width: 89rem;">
+  <div class="card-body">
+    <h4 class="card-title">
+      <h2>Your Review</h2>
+        <h6>{{#each posts as |post|}}</h6>
+        </h4>
+        {{> postinfo post}}
+    <p class="card-text">
+      <div class="meta">
+        {{/each}}
+      </div>
+    </p>
+    <a href="/post/{{id}}" class="card-link">{{comments.length}} comment(s)</a>
+  </div>
+</div>
+</ol>
 {{/if}}
 
 <script src="/javascript/add-park.js"></script>
