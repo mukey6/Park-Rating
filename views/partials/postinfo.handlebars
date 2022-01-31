@@ -1,15 +1,12 @@
 <article>
   <div>
-    <a href="{{park_name}}">
-        {{park_name}}
-    </a>
-    <span>({{post_id}})</span>
+    <a href="/post/{{id}}">{{park_name}}</a>
   </div>
   <div class="meta">
-  //edit this {{vote}} by {{user.username}} on {{created_at}}
-    |
+    {{user.username}} Gave it {{park_name}} a rating of a {{park_rate}}
+
     <a href="/post/{{id}}">
-    {{comment_text}}
+      comment
     </a>
   </div>
 </article>

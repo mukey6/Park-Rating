@@ -33,4 +33,3 @@ async function commentFormHandler(event) {
 
     // get class for form associated with comments 
 document.querySelector('.comment-form???').addEventListener('submit', commentFormHandler);
-
