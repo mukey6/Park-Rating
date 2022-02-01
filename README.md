@@ -13,7 +13,7 @@ A full stack application that allows the user to review parks in their area and 
 
 
 ## URL
-Visit our applicaiton, deployed to Heroku [Here]()
+Visit our applicaiton, deployed to Heroku [Here](https://parkrating.herokuapp.com/)
 
 ## Contributions
 No Outside Contributions are being accepted at this time as this application is not open source.
