@@ -6,14 +6,15 @@ A full stack application that allows the user to review parks in their area and 
 ## Table of Contents
 - [Installation](#installation)
 - [URL](#usage)
-- [License](#license)
 - [Contribution](#contributing)
-- [Tests](#tests)
 - [Questions](#questions)
 
 
+## Installation
+
+
 ## URL
-Visit our applicaiton, deployed to Heroku [Here]()
+Visit our application, deployed to Heroku [Here]()
 
 ## Contributions
 No Outside Contributions are being accepted at this time as this application is not open source.
